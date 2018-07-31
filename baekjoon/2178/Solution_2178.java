@@ -17,6 +17,7 @@ public class Solution_2178 {
 		int N, M;
 		int[][] map;
 		int[][] visit;
+		int[][] direction =  {{1,0},{-1,0},{0,1},{0,-1}}; // South, North, East, West
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
@@ -61,25 +62,16 @@ public class Solution_2178 {
 				break;
 			}
 			
-			// South
-			if(x + 1 <= N && map[x + 1][y] != 0 && visit[x + 1][y] == -1) {
-				queue.offer(new Position(x+1, y));
-				visit[x+1][y] = visit[x][y] + 1;
-			}
-			// North
-			if(x - 1 >= 1 && map[x - 1][y] != 0 && visit[x - 1][y] == -1) {
-				queue.offer(new Position(x-1, y));
-				visit[x-1][y] = visit[x][y] + 1;
-			}
-			// East
-			if(y + 1 <= M && map[x][y + 1] != 0 && visit[x][y + 1] == -1) {
-				queue.offer(new Position(x, y+1));
-				visit[x][y+1] = visit[x][y] + 1;
-			}
-			// West
-			if(y - 1 >= 1 && map[x][y - 1] != 0 && visit[x][y - 1] == -1) {
-				queue.offer(new Position(x, y-1));
-				visit[x][y-1] = visit[x][y] + 1;
+			for(int i=0; i<direction.length; i++) {
+				int nextX = x + direction[i][0];
+				int nextY = y + direction[i][1];
+				
+				if(((1<=nextX && nextX<=N) && (1<=nextY && nextY<=M)) 
+					&& (map[nextX][nextY] != 0) 
+					&& (visit[nextX][nextY] == -1)) {
+					queue.offer(new Position(nextX, nextY));
+					visit[nextX][nextY] = visit[x][y] + 1;
+				}
 			}
 		}
 		
@@ -91,6 +83,7 @@ public class Solution_2178 {
 		}
 	}
 }
+
 class Position {
 	int x, y;
 	
