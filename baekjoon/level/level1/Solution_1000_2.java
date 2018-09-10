@@ -5,18 +5,19 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
 
-public class Solution_11719 {
-
+public class Solution_1000_2 {
+    
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
-		String line = null;
-		while((line = br.readLine()) != null) {
-			bw.write(line);
-			bw.newLine();
-		}
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		int A = Integer.parseInt(st.nextToken());
+		int B = Integer.parseInt(st.nextToken());
+		
+		bw.write(String.valueOf(A + B));
 		
 		br.close();
 		bw.close();
