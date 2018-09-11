@@ -34,7 +34,7 @@ public class Solution_1546 {
 		}
 		avg = sum / score.length;
 		
-		bw.write(String.format("%.2f", avg));
+		bw.write(String.valueOf(avg));
 		
 		br.close();
 		bw.close();
