@@ -20,12 +20,7 @@ public class Solution_2908 {
 		A = new StringBuffer(A).reverse().toString();
 		B = new StringBuffer(B).reverse().toString();
 		
-		if(Integer.parseInt(A) > Integer.parseInt(B)) {
-			bw.write(A);
-		}
-		else {
-			bw.write(B);
-		}
+		bw.write(Integer.parseInt(A) > Integer.parseInt(B) ? A : B);
 		
 		br.close();
 		bw.close();

@@ -14,24 +14,22 @@ public class Solution_1157 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
-		String str = br.readLine().toUpperCase();
+		String str = br.readLine().toUpperCase();  // 모두 대문자로 변환
 		
 		// 2. Solution
 		int[] alphabet = new int[26];
 		Arrays.fill(alphabet, 0);
 		
 		// 글자별 사용 개수 취득
-		for(int i=0; i<str.length(); i++) {
-			alphabet[str.charAt(i)-'A']++;
-		}
-		
-		// 최대값 인덱스 취득
 		int max = 0;
-		for(int i=0; i<alphabet.length; i++) {
-			if(alphabet[i] > alphabet[max]) {
-				max = i;
+		for(int i=0; i<str.length(); i++) {
+			int index = str.charAt(i)-'A';
+			alphabet[index]++;
+			if(alphabet[max] < alphabet[index]) {
+				max = index;  // 최대값 취득
 			}
 		}
+		
 		char result = (char) ('A' + max);
 		
 		// 유일한 값인지 확인
