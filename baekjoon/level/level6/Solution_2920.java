@@ -29,7 +29,6 @@ public class Solution_2920 {
 	
 	public static String checkFunc(int[] array) {
 		boolean isAsc = true;
-		
 		for(int i=0; i<array.length-1; i++) {
 			if(array[i] > array[i+1]) {
 				isAsc = false;

@@ -37,7 +37,6 @@ public class Solution_8958 {
 		for(int i=0; i<input.length; i++) {
 			if(input[i] == 'O') {
 				score += (bonus++);
-				
 			}
 			else {
 				bonus = 1;
