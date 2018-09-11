@@ -14,7 +14,6 @@ public class Solution_8393 {
 			sum += i;
 		}
 		System.out.println(sum);
-		
 	}
 
 }
