@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Solution_5014 {
+public class Solution_5014_1 {
 	
 	public static void main(String[] args) throws IOException {
 		
