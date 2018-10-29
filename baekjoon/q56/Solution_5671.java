@@ -36,14 +36,13 @@ public class Solution_5671 {
 	}
 	
 	public static boolean isRepresent(int num) {
-		char[] arr = String.valueOf(num).toCharArray();
 		int[] ap = new int[10];
 		
-		for(char c : arr) {
-			int idx = c - '0';
-			if(++ap[idx] > 1) {
+		while(num > 0) {
+			if(++ap[num%10] > 1) {
 				return true;
 			}
+			num /= 10;
 		}
 		
 		return false;
